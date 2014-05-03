@@ -1,4 +1,4 @@
-# Riemann Dashboard 0.2.4
+# Riemann Dashboard
 
 This Dockerfile runs the [Riemann Dashboard](https://github.com/aphyr/riemann-dash) from [paintedfox/ruby](https://index.docker.io/u/davidkelley/riemann-dash)
 

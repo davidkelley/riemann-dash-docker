@@ -8,8 +8,7 @@ MAINTAINER Koala <info@koala.im>
 RUN apt-get update
 
 # Install the dashboard gem
-# RUN gem install thin -v 1.6.2 --no-doc
-RUN gem install riemann-dash -v 0.2.4 --no-doc
+RUN gem install riemann-dash --no-doc
 
 WORKDIR /dash
 
