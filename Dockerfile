@@ -14,6 +14,9 @@ WORKDIR /dash
 
 ADD . /dash
 
+RUN ln -s /usr/local/lib/ruby/gems/2.0.0/gems/riemann-dash-0.2.8/config/ /dashconfig
+VOLUME /dashconfig
+
 # Default Riemann Dashboard Port Binding
 EXPOSE 4567
 
