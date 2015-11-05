@@ -4,21 +4,18 @@ FROM paintedfox/ruby
 
 MAINTAINER Koala <info@koala.im>
 
-# Ensure latest packages installed
-RUN apt-get update
+RUN apt-get update && \
+    apt-get install -y ca-certificates
 
-# Install the dashboard gem
-RUN gem install riemann-dash --no-doc
+RUN gem install riemann-dash -v '0.2.12' --no-doc
 
 WORKDIR /dash
 
 ADD . /dash
 
-RUN ln -s /usr/local/lib/ruby/gems/2.0.0/gems/riemann-dash-0.2.8/config/ /dashconfig
+RUN ln -s /usr/local/lib/ruby/gems/2.0.0/gems/riemann-dash-0.2.12/config/ /dashconfig
 VOLUME /dashconfig
 
-# Default Riemann Dashboard Port Binding
 EXPOSE 4567
 
-# Expose the riemann dash gem command
 ENTRYPOINT ["riemann-dash"]
